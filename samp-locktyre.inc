@@ -42,7 +42,7 @@ stock bool:IsPlayerInRangeOfVehiclePart(playerid, vehicleid, partid, Float:range
 stock bool:LockTyre_Locked(vehicleid, must = 1) 
 {
     new count; 
-    forex(fan, 4) if(TyreData[vehicleid][fan][tValid])
+    for(new fan; fan < 4; fan++) if(TyreData[vehicleid][fan][tValid])
         count++;
 
     if(count < must)
@@ -53,7 +53,7 @@ stock bool:LockTyre_Locked(vehicleid, must = 1)
 
 stock LockTyre_Near(playerid, vehicleid, Float:range = 1.0) // near of tire
 {
-    forex(fan, 4) if(IsPlayerInRangeOfVehiclePart(playerid, vehicleid, fan+1, range))
+    for(new fan; fan < 4; fan++) if(IsPlayerInRangeOfVehiclePart(playerid, vehicleid, fan+1, range))
         return fan;
 
     return -1;
@@ -84,7 +84,7 @@ stock bool:LockTyre_Attach(vehicleid, tyre)
 
         TyreData[vehicleid][tyre][tValid] = true;
         TyreData[vehicleid][tyre][tObject] = CreateDynamicObject(19094, vehpos[0], vehpos[1], vehpos[2], 0.0, 0.0, 0.0);
-        forex(fan, 5) SetDynamicObjectMaterial(TyreData[vehicleid][tyre][tObject], fan, 19094, "none", "none", RGBAToARGB(COLOR_YELLOW));
+        for(new fan; fan < 5; fan++) SetDynamicObjectMaterial(TyreData[vehicleid][tyre][tObject], fan, 19094, "none", "none", RGBAToARGB(COLOR_YELLOW));
 
         AttachDynamicObjectToVehicle(TyreData[vehicleid][tyre][tObject], vehicleid, attachtyre[0], attachtyre[1], attachtyre[2], attachtyre[3], attachtyre[4], attachtyre[5]);
     }
