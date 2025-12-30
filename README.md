@@ -3,14 +3,14 @@
     Include by Abyss Morgan & Incognito
 
 ## Include Requirements
-    [Streamer](https://github.com/samp-incognito/samp-streamer-plugin/releases/tag/v2.9.6), [Incognito](https://github.com/samp-incognito/)
-    [3DTryg](https://github.com/r4sheed/3DTryg/releases/tag/v1.0.2), Abyss Morgan
+- [Streamer](https://github.com/samp-incognito/samp-streamer-plugin/releases/tag/v2.9.6), [Incognito](https://github.com/samp-incognito/)
+- [3DTryg](https://github.com/r4sheed/3DTryg/releases/tag/v1.0.2), Abyss Morgan
 
-    Respect for them.
+Respect for them.
 
 ## Preview
-    ![Preview 1](image1.jpg)
-    ![Preview 2](image2.jpg)
+![Preview 1](preview/image1.jpg)
+![Preview 2](preview/image2.jpg)
 
 ## Vehicle Part for IsPlayerInRangeOfVehiclePart
     VEHICLE_PART_RFTIRE                         (1) // Right Front tire
