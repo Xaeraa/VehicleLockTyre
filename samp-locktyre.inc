@@ -19,6 +19,10 @@
     #error required 3DTryg.inc Gen. 2 by Abyss Morgan (https://github.com/r4sheed/3DTryg/releases/tag/v1.0.2)
 #endif 
 
+#if !defined RGBAToARGB
+    #define RGBAToARGB(%0) (%0 >>> 8 | %0 << 24)
+#endif
+
 enum e_locktyre_data
 {
     tObject,
@@ -84,7 +88,7 @@ stock bool:LockTyre_Attach(vehicleid, tyre)
 
         TyreData[vehicleid][tyre][tValid] = true;
         TyreData[vehicleid][tyre][tObject] = CreateDynamicObject(19094, vehpos[0], vehpos[1], vehpos[2], 0.0, 0.0, 0.0);
-        for(new fan; fan < 5; fan++) SetDynamicObjectMaterial(TyreData[vehicleid][tyre][tObject], fan, 19094, "none", "none", RGBAToARGB(COLOR_YELLOW));
+        for(new fan; fan < 5; fan++) SetDynamicObjectMaterial(TyreData[vehicleid][tyre][tObject], fan, 19094, "none", "none", RGBAToARGB(0xFFFF0000));
 
         AttachDynamicObjectToVehicle(TyreData[vehicleid][tyre][tObject], vehicleid, attachtyre[0], attachtyre[1], attachtyre[2], attachtyre[3], attachtyre[4], attachtyre[5]);
     }
